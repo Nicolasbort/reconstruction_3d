@@ -83,7 +83,7 @@ void Uav::gotoPositionAbsolute(float x, float y, float z)
     {  
         ROS_INFO("Moving...");
         posePublisher.publish(newPosition);
-        std::this_thread::sleep_for(std::chrono::milliseconds(800));    
+        usleep(800000);    
     }  
 
     ROS_INFO("Arrived at [%.2f, %.2f, %.2f]", x, y, z);
