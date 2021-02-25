@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    
+    <arg name="path" default="$(find rec3d)/bag/" />
+    <arg name="bag_name" default="V2_01_easy.bag" />
+    <node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg path)$(arg bag_name) /cam0/image_raw:=/camera/image_raw"/>
+
+    <include file="$(find rec3d)/launch/orb_slam_mono.launch" />
+
+
+    <node pkg="image_view" type="image_view" name="image_view" args="image:=/orb_slam2_mono/debug_image" />
+
+</launch>

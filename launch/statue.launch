@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch> 
+
+  <arg name="world_name" default="statue_v2"/>
+  <arg name="enable_logging" default="false" />
+  <arg name="enable_ground_truth" default="true" />
+  <arg name="log_file" default="rec3d" />
+  <arg name="pause" value="false"/>
+
+  <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find rotors_gazebo)/models:$(find rec3d)/models"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find rotors_gazebo)/models:$(find rec3d)/models"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find rec3d)/worlds/$(arg world_name).world"/>
+    <arg name="paused" value="$(arg pause)"/>
+  </include>
+  
+</launch>

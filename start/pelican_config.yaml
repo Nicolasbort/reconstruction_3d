@@ -1,0 +1,12 @@
+start_position:
+  x: 5.0
+  y: -0.5
+  z: 2.0
+  heading: 0.0
+
+topics:
+  odometry: "/pelican/ground_truth/pose"
+  camera: "/pelican/camera_monocular/image_raw"
+  pose: "/pelican/command/pose"
+
+uav_name: "pelican"

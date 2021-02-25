@@ -1,0 +1,52 @@
+name: reconstruction_3d_pkg
+root: ~/
+startup_window: planner
+windows:
+  - bash:
+      layout: tiled
+      panes:
+        -
+  - roscore:
+      layout: tiled
+      panes:
+        - roscore
+  - statue:
+      layout: tiled
+      panes:
+        - sleep 2;roslaunch reconstruction_3d statue.launch
+  - uavs:
+      layout: tiled
+      panes:
+        - sleep 2; roslaunch reconstruction_3d spawn_uav.launch mav_name:=pelican y:=0.5
+        # - sleep 2; roslaunch reconstruction_3d spawn_uav.launch mav_name:=hummingbird y:=-0.5
+  - planner:
+      layout: tiled
+      panes:
+        - sleep 2; rosrun reconstruction_3d planner_pelican.py
+        # - roslaunch reconstruction_3d spawn_uav.launch mav_name:=hummingbird y:=-0.5
+  # - camera:
+  #     layout: tiled
+  #     panes:
+  #       - sleep 4; rosrun image_view image_view image:=/camera/image_raw
+  - republish:
+      layout: tiled
+      panes:
+        - sleep 4; rosrun image_transport republish raw in:=/pelican/camera_monocular/image_raw raw out:=/camera/image_raw
+  # - orb_slam:
+  #     layout: tiled
+  #     panes:
+  #       - export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/home/nicolas/builds/ORB_SLAM2/Examples/ROS; export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/nicolas/builds/ORB_SLAM2/Thirdparty/DBoW2/lib:/home/nicolas/builds/ORB_SLAM2/Thirdparty/g2o/lib; sleep 3; rosrun ORB_SLAM2 Mono /home/nicolas/builds/ORB_SLAM2/Vocabulary/ORBvoc.txt /home/nicolas/catkin_ws/src/orb_slam_2_ros/orb_slam2/config/TUM2.yaml
+        # - sleep 4; rosrun image_view image_view image:=/orb_slam2_mono/debug_image
+  - orb_slam:
+      layout: tiled
+      panes:
+        - sleep 3; roslaunch reconstruction_3d orb_slam_mono.launch
+        - sleep 4; rosrun image_view image_view image:=/orb_slam2_mono/debug_image
+  # - rviz:
+  #     layout: tiled
+  #     panes:
+  #       - sleep 1;rviz
+  # - bag:
+  #     layout: tiled
+  #     panes:
+  #       - sleep 5; rosbag play /home/nicolas/Desktop/bag/test_bag.bag
