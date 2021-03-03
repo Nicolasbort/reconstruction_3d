@@ -135,5 +135,5 @@ private:
 
     float _ERROR_POSE    = 0.2;      // Offset of the odometry position and target position
     float _MAX_STEP_SIZE = 0.5;      // Max distance of a movement
-    float _Z_ERROR       = 0.12;     // Z axis error
+    float _Z_ERROR       = 0.05;     // Z axis error
 };

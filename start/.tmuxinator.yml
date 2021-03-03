@@ -23,7 +23,7 @@ windows:
       layout: tiled
       panes:
         # - sleep 10; rosrun rec3d behavior_tree_node /home/nicolas/catkin_ccmslam/src/rec3d/config/behavior_tree.xml
-        - sleep 10; rosrun rec3d main_tree_node /home/nicolas/catkin_ccmslam/src/rec3d/config/teste.xml
+        - sleep 10; rosrun rec3d main_tree_node /home/nicolas/catkin_ccmslam/src/rec3d/config/behavior_tree.xml
 
 
 #   - orb_slam:

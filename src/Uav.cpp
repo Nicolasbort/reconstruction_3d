@@ -305,7 +305,7 @@ Eigen::Vector3f Uav::getPosition()
 //
 bool Uav::isAtPosition(float x, float y, float z)
 {
-    // ROS_INFO("isAtPosition called...");
+    ROS_INFO("isAtPosition called...");
 
     geometry_msgs::PoseConstPtr sharedPose = this->getGroundTruthPosition();
 

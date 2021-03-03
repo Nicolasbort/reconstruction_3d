@@ -1,20 +1,10 @@
 <?xml version="1.0" ?>
- <root >
-     <BehaviorTree>
-        <Timeout msec="150">
-            <SequenceStar name="sequence">
-                <MyAsyncAction name="action_A"/>
-                <MyAsyncAction name="action_B"/>
-            </SequenceStar>
-        </Timeout>
-     </BehaviorTree>
- </root>
 
-<!-- <root main_tree_to_execute = "TesteTree" >
+<root main_tree_to_execute = "TesteTree" >
 
     <BehaviorTree ID="TesteTree">
         <Sequence name="root_sequence">
-            <CheckBattery />
+            <!-- <CheckBattery /> -->
             <MoveBase name="action_A" goto="1,1,0"/>
             <RotateBase name="angle_A" angle="90"/>
             <MoveBase name="action_C" goto="-1,-1,0"/>
@@ -22,7 +12,7 @@
         </Sequence>
      </BehaviorTree>
 
-    <BehaviorTree ID="MainTree">
+    <!-- <BehaviorTree ID="MainTree">
         <Sequence name="root_sequence">
             <MoveBase />
             <MoveBase />
@@ -39,6 +29,6 @@
                 <GoAroundObject/>
             </Sequence>
         </Sequence>
-    </BehaviorTree>
+    </BehaviorTree> -->
 
-</root> -->
+</root>
