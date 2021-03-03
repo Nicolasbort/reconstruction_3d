@@ -1,0 +1,38 @@
+name: rec3d_pkg
+root: ~/
+startup_window: planner
+windows:
+  - bash:
+      layout: tiled
+      panes:
+        -
+  - roscore:
+      layout: tiled
+      panes:
+        - roscore
+  - orb_slam:
+      layout: tiled
+      panes:
+        - sleep 3; roslaunch rec3d orb_slam_mono.launch
+        - sleep 4; rosrun image_view image_view image:=/orb_slam2_mono/debug_image
+  - rviz:
+      layout: tiled
+      panes:
+        - sleep 1;rviz
+  - camera:
+      layout: tiled
+      panes:
+        - sleep 3; roslaunch rec3d usb_cam.launch
+#   - republish:
+#       layout: tiled
+#       panes:
+#         - sleep 4; rosrun image_transport republish raw in:=/pelican/camera_monocular/image_raw raw out:=/camera/image_raw
+
+#   - bag:
+#       layout: tiled
+#       panes:
+#         - sleep 5; rosbag play /home/nicolas/Desktop/bag/test_bag.bag
+#   - camera:
+#        layout: tiled
+#        panes:
+#         - sleep 4; rosrun image_view image_view image:=/camera/image_raw

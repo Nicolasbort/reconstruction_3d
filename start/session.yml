@@ -22,7 +22,9 @@ windows:
   - planner:
       layout: tiled
       panes:
-        - sleep 6; rosrun rec3d mission_planner_cpp
+        # - sleep 10; rosrun rec3d behavior_tree_node /home/nicolas/catkin_ccmslam/src/rec3d/config/behavior_tree.xml
+        - sleep 10; rosrun rec3d main_tree_node /home/nicolas/catkin_ccmslam/src/rec3d/config/teste.xml
+
 
 #   - orb_slam:
 #       layout: tiled

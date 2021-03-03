@@ -1,0 +1,11 @@
+<root>
+    <TreeNodesModel>
+        <Action ID="MoveBase">
+            <input_port name="goto"/>
+        </Action>
+        <Action ID="RotateBase">
+            <input_port name="angle"/>
+        </Action>
+    </TreeNodesModel>
+</root>
+
